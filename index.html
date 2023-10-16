@@ -1,0 +1,111 @@
+<!---Andy Mejia
+Period 3 Even
+Mr.Irimina-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<style>
+			div{
+				text-align: justify;
+				color: black;
+				background-color: orange;
+				font-family: bold 24pt comic sans ms;
+				text-decoration: underline;
+				text-decoration-color: green;
+				text-decoration-style: wavy;
+			}
+			img{
+				height: 100%;
+				float: left;
+				padding-right: 20px;
+			}
+		</style>
+		<script>
+		
+			function initialize()
+			{
+				/*For part 3
+								hallowenText=document.getElementById("colordiv");
+			fore="black";
+			back="orange";
+			textWidth=100;
+				*/
+				textOutput=document.getElementById("textdiv");
+				fontSizeOutput=document.getElementById("sizeout");
+				fontsize=24;
+
+			}
+			function modifyFontSize(mod)
+			{
+				fontSize+=mod;
+				if(fontSize<4){
+					fontSize=4;
+				}
+				display();
+			}
+			function toggleColor(){
+				var tmp=fore;
+				fore=back;
+				back=tmp;
+				display();
+			}
+			function changeWidth(w){
+				textWidth=w;
+				display();
+
+			}
+			function display(){
+				/*
+				For part 3
+				hallowenText.style.color=fore;
+				hallowenText.style.backgroundColor=back;
+				hallowenText.style.width=textWidth+"%";
+				*/
+				fontSizeOutput.innerHTML=fontsize;
+				textOutput.style.fontSize=fontSize+"pt";
+				
+			}
+		
+		</script>
+	</head>
+		
+	<body onload = "initialize();">
+		<div>
+			<!---For Part 2. Working with Images-->
+			<img src="doctor who.jpg">
+			<span>Miami -- which was eliminated from playoff contention after a loss to FC Cincinnati in its most recent game -- has two matchups against Charlotte FC remaining in the MLS regular season, at home Wednesday and in Charlotte on Saturday.
+
+				Messi has played in only two of the team's past seven MLS games because of a hamstring injury, but he did manage 35 minutes off the bench in the loss to Cincinnati and played 37 minutes for Argentina in its 1-0 FIFA World Cup qualifying win over Paraguay on Friday.
+				
+				If healthy, the Argentine legend -- who has scored 11 goals in his first season with Miami -- will certainly be the main attraction for fans attending games on this two-game tour of China, whose national team has only appeared in one World Cup (2002).
+				
+				The Chinese Super League has managed to attract a number of high-profile Brazilian signings over recent years, including Oscar, Hulk, Alex Teixeira and Paulinho -- though many of those players have now moved on.
+				
+				"This will be a great opportunity to continue building on our 2023 campaign, in which we achieved our first-ever trophy," sporting director and chief soccer officer Chris Henderson said.</span>
+
+				<div id="colordiv">
+					Click the button to switch me from black to orange and back again and again. Happy halloween 
+				</div>
+				<!---For part 3-->
+				<p>
+					<button onclick="toggleColor();">Toggle Colors</button>
+					<button onclick="changeWidth(25)">25% Width</button>
+					<button onclick="changeWidth(50)">50% Width</button>
+					<button onclick="changeWidth(75)">75% Width</button>
+					<button onclick="changeWidth(100)">100% Width</button>
+
+				</p>
+		</div>
+		<div id="textdiv">
+			I am a wonderful example of how fonts work!
+		</div>
+		<hr />
+		<p>
+			<div> Current font size: <span id="sizeout"></span>point</div>
+			<button onclick="modifyFontSize(1);">Font Size ++</button>
+			<button onclick="modifyFontSize(-1);">Font Size --</button>
+
+		</p>
+	</body>
+</html>
